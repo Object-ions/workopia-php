@@ -1,3 +1,3 @@
 <?php
 
-echo 'Crete Listing';
+loadView('listings/create');
