@@ -28,3 +28,18 @@ function basePath($path = '') {
 function loadView($viewName) {
   require basePath("views/{$viewName}.view.php");
 }
+
+/**
+ * Load a partial
+ * 
+ * @param string $name
+ * @ return void
+ * 
+ */
+
+// from -> views/partials/head.php
+// to -> 'home'
+// so anytime we want to load a view we going to call that fx
+function loadPartial($partialName) {
+  require basePath("views/partials/{$partialName}.php");
+}
