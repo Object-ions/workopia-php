@@ -55,3 +55,29 @@ function loadPartial($partialName) {
     echo "The partial: '{$partialName}' not found";
   }
 }
+
+/**
+ * Inspect values
+ * 
+ * @param mixed $value
+ * @return mixed
+ * 
+ */
+function inspect($value) {
+  echo '<pre>';
+  var_dump($value);
+  echo '</pre>';
+}
+
+/**
+ * Inspect values and die
+ * 
+ * @param mixed $value
+ * @return mixed
+ * 
+ */
+function inspectAndDie($value) {
+  echo '<pre>';
+  die(var_dump($value));
+  echo '</pre>';
+}
