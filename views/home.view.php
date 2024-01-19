@@ -1,12 +1,12 @@
 <!-- Head of HTML tags -->
-<?php require basePath('views/partials/head.php'); ?>
+<?php loadPartial('head'); ?>
 
 <!-- Nav -->
-<?php require basePath('views/partials/navbar.php'); ?>
+<?php loadPartial('navbar'); ?>
 <!-- Showcase -->
-<?php require basePath('views/partials/showcase.php'); ?>
+<?php loadPartial('showcase'); ?>
 <!-- Top Banner -->
-<?php require basePath('views/partials/top-banner.php'); ?>
+<?php loadPartial('top-banner'); ?>
 
     <!-- Job Listings -->
     <section>
@@ -199,7 +199,7 @@
       </section>
 
 <!-- Bottom Banner -->
-<?php require basePath('views/partials/bottom-banner.php'); ?>
+<?php loadPartial('bottom-banner'); ?>
 
 <!-- End of HTML tags  -->
-<?php require basePath('views/partials/footer.php'); ?>
+<?php loadPartial('footer'); ?>

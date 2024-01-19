@@ -26,7 +26,13 @@ function basePath($path = '') {
 // to -> 'home'
 // so anytime we want to load a view we going to call that fx
 function loadView($viewName) {
-  require basePath("views/{$viewName}.view.php");
+  $viewPath = basePath("views/{$viewName}.view.php");
+
+  if (file_exists($viewPath)) {
+    require $viewPath;
+  } else {
+    echo "The view '{$viewName}' not found";
+  }
 }
 
 /**
@@ -41,5 +47,11 @@ function loadView($viewName) {
 // to -> 'home'
 // so anytime we want to load a view we going to call that fx
 function loadPartial($partialName) {
-  require basePath("views/partials/{$partialName}.php");
+  $partialPath = basePath("views/partials/{$partialName}.php");
+
+  if (file_exists($partialPath)) {
+    require $partialPath;
+  } else {
+    echo "The partial: '{$partialName}' not found";
+  }
 }
