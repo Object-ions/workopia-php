@@ -12,7 +12,7 @@ class Router {
   }
 
   /**
-   * sdd a GET rout
+   * add a GET rout
    * 
    * @param string $uri
    * @param string $controller
@@ -24,7 +24,7 @@ class Router {
    }
 
   /**
-   * sdd a POST rout
+   * add a POST rout
    * 
    * @param string $uri
    * @param string $controller
@@ -36,7 +36,7 @@ class Router {
    }
    
   /**
-   * sdd a PUT rout
+   * add a PUT rout
    * 
    * @param string $uri
    * @param string $controller
@@ -48,7 +48,7 @@ class Router {
    }
 
   /**
-   * sdd a Delete rout
+   * add a Delete rout
    * 
    * @param string $uri
    * @param string $controller
@@ -58,6 +58,19 @@ class Router {
    public function delete($uri, $controller) {
     $this -> registerRoute('DELETE', $uri, $controller);
    }
+
+  /**
+   * load error page
+   * @param int $httpCode
+   * 
+   * @return void
+   */
+  public function error($httpCode = 404) {
+    http_response_code($httpCode);
+    loadView("error/{$httpCode}");
+    exit;
+    
+  }
 
   /**
    * route the request
@@ -74,8 +87,6 @@ class Router {
       }
     }
 
-    http_response_code(404);
-    loadView('error/404');
-    exit;
+    $this->error();
   }
 }
